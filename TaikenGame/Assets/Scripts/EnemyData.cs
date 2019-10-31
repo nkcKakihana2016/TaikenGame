@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyData : MonoBehaviour
+[System.Serializable]
+public class EnemyData
 {
-    // Start is called before the first frame update
-    void Start()
+    // 敵の種類
+    public enum EnemyType
     {
-        
+        Common = 0,     // ザコ敵
+        Boss,           // ボス
     }
+
+    public int ID;                     // 敵のID
+    public string charaName;           // 敵の名称
+    public EnemyType enemyType;        // 敵の種類
+    public int hp = 0;                 // HP
 }

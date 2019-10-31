@@ -1,9 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
+using UniRx.Triggers;
 
-public class GameMaster : MonoBehaviour
+public class GameMaster : GMSingleton<GameMaster>
 {
+    public Transform playerTrans;           // プレイヤーの座標
+
+
+    protected override void Awake()
+    {
+        base.Awake();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
